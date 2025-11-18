@@ -1,0 +1,618 @@
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile devices - Điện thoại */
+@media screen and (max-width: 575px) {
+    .slider-container {
+        width: 100%;
+        height: 180px;
+
+        .dowmBtn {
+            display: none;
+        }
+
+        .fir-tit {
+            font-size: 18px;
+            top: 28%;
+            padding: 0 10px;
+        }
+
+        .fir-detail {
+            font-size: 11px;
+            top: 48%;
+            padding: 0 15px;
+        }
+
+        .fir-btn {
+            top: 65%;
+
+            li {
+                width: 70px;
+                height: 22px;
+                font-size: 9px;
+                text-indent: 0;
+                line-height: 22px;
+                text-align: center;
+
+                i {
+                    display: none;
+                }
+            }
+        }
+
+        .change-bg-btn {
+            .left-change-bg {
+                left: 2%;
+            }
+
+            .right-change-bg {
+                right: 2%;
+            }
+
+            li {
+                width: 25px;
+                height: 25px;
+                background-size: 12px 12px !important;
+            }
+        }
+    }
+}
+
+/* Tablet nhỏ - Từ 576px đến 767px */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .slider-container {
+        width: 100%;
+        height: 250px;
+
+        .dowmBtn {
+            display: none;
+        }
+
+        .fir-tit {
+            font-size: 28px;
+            top: 30%;
+        }
+
+        .fir-detail {
+            font-size: 14px;
+            top: 48%;
+        }
+
+        .fir-btn {
+            top: 63%;
+
+            li {
+                width: 100px;
+                height: 30px;
+                font-size: 11px;
+                text-indent: 0;
+                line-height: 30px;
+                text-align: center;
+
+                i {
+                    display: none;
+                }
+            }
+        }
+
+        .change-bg-btn {
+            .left-change-bg {
+                left: 3%;
+            }
+
+            .right-change-bg {
+                right: 3%;
+            }
+
+            li {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+/* Tablet lớn - Từ 768px đến 991px */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .slider-container {
+        width: 100%;
+        height: 400px;
+
+        .dowmBtn {
+            bottom: 120px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .fir-tit {
+            font-size: 42px;
+            top: 32%;
+        }
+
+        .fir-detail {
+            font-size: 18px;
+            top: 45%;
+        }
+
+        .fir-btn {
+            top: 58%;
+
+            li {
+                width: 120px;
+                height: 40px;
+                font-size: 13px;
+                text-indent: 25px;
+                line-height: 40px;
+            }
+        }
+
+        .change-bg-btn {
+            .left-change-bg {
+                left: 30px;
+            }
+
+            .right-change-bg {
+                right: 30px;
+            }
+        }
+    }
+}
+
+/* Desktop nhỏ - Từ 992px đến 1199px */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .slider-container {
+        width: 100%;
+        height: 500px;
+
+        .dowmBtn {
+            bottom: 150px;
+        }
+
+        .fir-tit {
+            font-size: 52px;
+            top: 33%;
+        }
+
+        .fir-detail {
+            font-size: 22px;
+            top: 45%;
+        }
+
+        .fir-btn {
+            top: 56%;
+
+            li {
+                width: 130px;
+                height: 44px;
+                font-size: 14px;
+                text-indent: 35px;
+            }
+        }
+
+        .change-bg-btn {
+            .left-change-bg {
+                left: 40px;
+            }
+
+            .right-change-bg {
+                right: 40px;
+            }
+        }
+    }
+}
+
+/* Desktop lớn - Từ 1200px trở lên */
+@media screen and (min-width: 1200px) {
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        min-height: 600px;
+
+        .dowmBtn {
+            bottom: 200px;
+        }
+
+        .fir-tit {
+            font-size: 64px;
+        }
+
+        .fir-detail {
+            font-size: 28px;
+        }
+
+        .fir-btn li {
+            width: 146px;
+            height: 48px;
+            font-size: 15px;
+        }
+    }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+
+    >div {
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    .default-left {
+        left: 0;
+    }
+
+    /* Slide animations */
+    .next-in {
+        animation: nexfIn .5s ease forwards;
+        z-index: 9;
+    }
+
+    .next-leave {
+        animation: nextLeave .5s ease forwards;
+    }
+
+    .front-in {
+        animation: frontIn .5s ease forwards;
+        z-index: 9;
+    }
+
+    .front-leave {
+        animation: frontLeave .5s ease forwards;
+    }
+
+    /* Navigation buttons */
+    &:hover .change-bg-btn li {
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .change-bg-btn li {
+        width: 31px;
+        height: 31px;
+        position: absolute;
+        top: 48%;
+        z-index: 99;
+        background-size: 15px 15px !important;
+        background-position: center;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+
+    .left-change-bg {
+        left: 50px;
+        background: url("../../../../../assets/images/sliders/dot_pre.png") no-repeat;
+    }
+
+    .right-change-bg {
+        right: 50px;
+        background: url("../../../../../assets/images/sliders/dot_next.png") no-repeat;
+    }
+}
+
+/* Down button */
+.dowmBtn {
+    background: transparent url("../../../../../assets/images/sliders/dot_down.png") center 9px no-repeat;
+    background-size: 14px 14px !important;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 36px;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    bottom: 200px;
+    z-index: 99;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(5px);
+        border-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* ============================================
+   CONTENT ELEMENTS - BASE
+   ============================================ */
+
+.fir-tit {
+    width: 100%;
+    font-size: 64px;
+    text-shadow: 2px 2px rgba(0, 0, 0, .2);
+    text-align: center;
+    position: absolute;
+    top: 34%;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.fir-detail {
+    width: 100%;
+    font-size: 28px;
+    line-height: 1.3em;
+    text-align: center;
+    position: absolute;
+    top: 46%;
+    opacity: 0;
+}
+
+.fir-btn {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 57%;
+
+    li {
+        width: 146px;
+        height: 48px;
+        font-size: 15px;
+        letter-spacing: 3px;
+        line-height: 48px;
+        text-indent: 40px;
+        border-radius: 5px;
+        color: #fff;
+        background: #f98805;
+        margin: 0 auto;
+        border-bottom: 3px solid rgba(0, 0, 0, .2);
+        cursor: pointer;
+        user-select: none;
+        transition: all .3s ease;
+
+        &:hover {
+            background: #0061ae;
+            text-indent: 30px;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.pick-li {
+    opacity: 0;
+
+    .btn-arrows {
+        text-indent: 0px;
+        opacity: 0;
+        transition: all .75s ease;
+    }
+
+    &:hover .btn-arrows {
+        opacity: 1;
+        text-indent: 7px;
+    }
+}
+
+/* ============================================
+   SLIDE ANIMATIONS
+   ============================================ */
+
+@keyframes nexfIn {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes nextLeave {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes frontIn {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes frontLeave {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+/* ============================================
+   BACKGROUND IMAGES
+   ============================================ */
+
+.fir-slider {
+    background-image: url("../../../../../assets/images/sliders/8.jpg");
+}
+
+.sec-slider {
+    background-image: url("../../../../../assets/images/sliders/4.jpg");
+}
+
+.thi-slider {
+    background-image: url("../../../../../assets/images/sliders/6.jpg");
+}
+
+.fou-slider {
+    background-image: url("../../../../../assets/images/sliders/7.jpg");
+}
+
+/* ============================================
+   CONTENT ANIMATIONS
+   ============================================ */
+
+.a-bounceinB {
+    animation: bounceinB 1s ease-in forwards;
+    opacity: 1;
+}
+
+.a-fadeinT {
+    animation: fadeinT 1s ease-out backwards;
+    opacity: 1;
+}
+
+.a-fadeinL {
+    animation: fadeinL 1s ease-out backwards;
+    opacity: 1;
+}
+
+.a-flipinX {
+    animation: flipinX 1s ease-out backwards;
+    opacity: 1;
+}
+
+.a-rotateinLB {
+    animation: rotateinLB 1s ease-out backwards;
+    opacity: 1;
+}
+
+.a-bounceinL {
+    animation: bounceinL 1s ease-out backwards;
+    opacity: 1;
+}
+
+.a-shake {
+    animation: shake 1s ease;
+    opacity: 1;
+}
+
+/* Animation keyframes */
+@keyframes bounceinB {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeinT {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flipinX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateinLB {
+    0% {
+        transform-origin: left bottom;
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform-origin: left bottom;
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceinL {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes fadeinL {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
