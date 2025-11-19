@@ -2,6 +2,22 @@
     <app-slide-show></app-slide-show>
 </div>
 
+<div class='home-full-container'>
+    <app-need-poetry [whitchStart]="whitchStart"></app-need-poetry>
+</div>
+
+<div class='home-full-container'>
+    <app-presentation-us [whitchStart]="whitchStart"></app-presentation-us>
+</div>
+
+<div class='home-full-container' style='background-color: #f5f5f5'>
+    <app-poetry-news [whitchStart]="whitchStart"></app-poetry-news>
+</div>
+
+<div class='home-full-container partner-tips' style='background-color: #f5f5f5'>
+    <app-partner-and-footer [whitchStart]="whitchStart"></app-partner-and-footer>
+</div>
+
 <div class='fixed-btn fixed-btn-bottom' (click)='goDown()'>
     <i class="anticon anticon-down"></i>
 </div>

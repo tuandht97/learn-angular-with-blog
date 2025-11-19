@@ -1,0 +1,12 @@
+<header class='header' nz-row
+    [ngClass]="[ blueBg && canchange ? 'blue-Bg' : 'transparent-Bg', canchange ? 'be-fixed' : 'be-relative' ]">
+
+    <div nz-col [nzLg]="5" [nzMd]="8" [nzSm]="8" [nzXs]="24">
+        <img src="../../../../assets/images/presentatin_us.jpg" alt="logo">
+    </div>
+
+    <div class='login' [routerLink]="['/routes/signin']" nz-col [nzXs]="2" [nzSm]="4" [nzMd]="6" [nzLg]="8" [nzXl]="10">
+        登录
+    </div>
+
+</header>

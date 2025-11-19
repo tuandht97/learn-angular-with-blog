@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { WindowRefService } from '../../../service/return-window.service';
 import { SlideShow } from './slide-show/slide-show';
+import { NeedPoetry } from './need-poetry/need-poetry';
+import { PartnerAndFooter } from './partner-and-footer/partner-and-footer';
+import { PresentationUs } from './presentation-us/presentation-us';
+import { PoetryNews } from './poetry-news/poetry-news';
 
 @Component({
   selector: 'app-home-content',
-  imports: [SlideShow],
-  providers: [WindowRefService],
+  imports: [
+    SlideShow,
+    NeedPoetry,
+    PartnerAndFooter,
+    PresentationUs,
+    PoetryNews
+  ],
+  providers: [
+    WindowRefService
+  ],
   templateUrl: './home-content.html',
   styleUrl: './home-content.scss',
 })
@@ -107,5 +119,6 @@ export class HomeContent implements OnInit {
       this._window.removeEventListener("scroll", this.eventListener);
     }
   }
+
 
 }
